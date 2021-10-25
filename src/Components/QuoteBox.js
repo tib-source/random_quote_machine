@@ -11,7 +11,7 @@ const QuoteBox = ({ getRandomQuote }) => {
   const leftQuote = <i className='fa fa-quote-left'></i>
   const rightQuote = <i className='fa fa-quote-right' id='right'></i>
   const twitter = <i className='fa fa-twitter'></i>
-
+  const hyperLink = 'https://www.twitter.com/intent/tweet?text='
 
   const handleClick = () => {
     const newQuote = getRandomQuote()
@@ -28,7 +28,7 @@ const QuoteBox = ({ getRandomQuote }) => {
       <div id="text">{leftQuote} {quote.text} {rightQuote}</div>
       <div id="author"> - {quote.author}</div>
       <div className="buttons">
-        <a href="#" id='tweet-quote'>{twitter}</a>
+        <a href={`${hyperLink}${quote.text}`} id='tweet-quote'>{twitter}</a>
         <button id='new-quote' onClick={handleClick}>Random</button>
       </div>
     </div>
