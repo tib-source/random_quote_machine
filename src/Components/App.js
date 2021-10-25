@@ -1,19 +1,28 @@
-import { getQueriesForElement } from "@testing-library/react";
 import QuoteBox from "./QuoteBox";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function App() {
-  const [quote, setQuote] = useState({})
-  const [error, seterror] = useState('')
+
+function App(props) {
+
+  const [length, setLenth] = useState(0)
   const URL = "https://type.fit/api/quotes"
-  const getQuote = () => {
+
+  useEffect(() => {
     fetch(URL)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data)
+        setLenth(data.length)
+        return props.addQuotes(data)
       });
+  }, [])
+
+  function getRandom() {
+    const index = Math.floor(Math.random() * length)
+    const rand = props.quotes[index]
+    console.log(index)
+    return rand
   }
 
 
@@ -25,10 +34,11 @@ function App() {
   //   }
   // }
   return (
-    <main className="App-main">
-      <QuoteBox apiCallBack={getQuote} />
-    </main>
+    <div className="App-div">
+      <QuoteBox getRandomQuote={getRandom} initial={getRandom()} />
+    </div>
   );
 }
 
-export default App;
+
+export default App
