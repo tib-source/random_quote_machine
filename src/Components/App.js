@@ -25,7 +25,6 @@ function App(props) {
     return rand
   }
 
-
   // const formatJson = (json) => {
   //   return {
   //     quote: json.q,
@@ -35,7 +34,7 @@ function App(props) {
   // }
   return (
     <div className="App-div">
-      <QuoteBox getRandomQuote={getRandom} initial={getRandom()} />
+      <QuoteBox getRandomQuote={getRandom} />
     </div>
   );
 }
