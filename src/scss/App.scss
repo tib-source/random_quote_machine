@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -6,23 +8,70 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: wheat;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Poppins', sans-serif;
+}
+#text{ 
+  font-size: 1.5em
+}
+
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
 }
 
 #quote-box{ 
+  width: 600px;
+  width: 600px;
   background-color: rebeccapurple;
   color: white;
   border-radius: 5px;
   padding: 2em;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  transition: 0.4s linear;
+  animation: fade 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  span{ 
+    font-size: 3em;
+  }
+
+  #text{
+    transition: 0.4s linear;
+    #right{
+      text-align: right
+    }
+  }
+
+  #author{ 
+    align-self: flex-end;
+  }
+  .buttons{ 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1em 0 0 0;
+  }
+
+  #new-quote{ 
+    padding: 0.8em 2em;
+    color: white;
+    font-family: inherit;
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 4px;
+    
+  }
+  #tweet-quote{
+    color: lightblue;
+    font-size: 2em;
+    text-align: center;
+  }
 }

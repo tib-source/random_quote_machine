@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 body {
   margin: 0;
   padding: 0;
@@ -12,22 +13,94 @@ body {
           align-items: center;
   height: 100vh;
   width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: wheat;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: 'Poppins', sans-serif;
+}
+
+#text {
+  font-size: 1.5em;
+}
+
+@-webkit-keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
 }
 
 #quote-box {
+  width: 600px;
+  width: 600px;
   background-color: rebeccapurple;
   color: white;
   border-radius: 5px;
   padding: 2em;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-animation: fade 1s ease-in-out;
+          animation: fade 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#quote-box span {
+  font-size: 3em;
+}
+
+#quote-box #text {
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+
+#quote-box #text #right {
+  text-align: right;
+}
+
+#quote-box #author {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+#quote-box .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 1em 0 0 0;
+}
+
+#quote-box #new-quote {
+  padding: 0.8em 2em;
+  color: white;
+  font-family: inherit;
+  background-color: rgba(255, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+#quote-box #tweet-quote {
+  color: lightblue;
+  font-size: 2em;
+  text-align: center;
 }
 /*# sourceMappingURL=App.css.map */

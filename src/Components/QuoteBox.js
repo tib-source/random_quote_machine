@@ -7,19 +7,30 @@ const initial = {
 
 const QuoteBox = ({ getRandomQuote }) => {
   const [quote, setQuote] = useState(initial)
+
+  const leftQuote = <i className='fa fa-quote-left'></i>
+  const rightQuote = <i className='fa fa-quote-right' id='right'></i>
+  const twitter = <i className='fa fa-twitter'></i>
+
+
   const handleClick = () => {
     const newQuote = getRandomQuote()
-    const text = document.querySelector('#text')
-    const author = document.querySelector('#author')
-    text.innerHTML = newQuote.text
-    author.innerHTML = newQuote.author
+    if (!newQuote.author) {
+      newQuote.author = 'Anonymous'
+    }
+    setQuote(newQuote)
+
   }
+
+
   return (
     <div id="quote-box">
-      <div id="text">{quote.text}</div>
-      <div id="author">{quote.author}</div>
-      <a href="#" id='tweet-quote'>tweet</a>
-      <button id='new-quote' onClick={handleClick}>Random</button>
+      <div id="text">{leftQuote} {quote.text} {rightQuote}</div>
+      <div id="author"> - {quote.author}</div>
+      <div className="buttons">
+        <a href="#" id='tweet-quote'>{twitter}</a>
+        <button id='new-quote' onClick={handleClick}>Random</button>
+      </div>
     </div>
   )
 
