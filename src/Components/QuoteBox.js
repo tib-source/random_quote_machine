@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const QuoteBox = ({ getRandomQuote, initial }) => {
-  const [quote, setQuote] = useState({ text: 1, author: 2 })
+  const [quote, setQuote] = useState(initial)
   const handleClick = () => {
     const newQuote = getRandomQuote()
     const text = document.querySelector('#text')
